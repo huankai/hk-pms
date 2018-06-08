@@ -1,8 +1,8 @@
 package com.hk.pms.web.controllers;
 
 import com.hk.commons.util.JsonUtils;
+import com.hk.core.data.commons.query.QueryModel;
 import com.hk.core.data.commons.query.QueryPage;
-import com.hk.core.data.jpa.query.JpaQueryModel;
 import com.hk.core.web.JsonResult;
 import com.hk.core.web.controller.BaseController;
 import com.hk.pms.core.domain.SysOrg;
@@ -25,7 +25,7 @@ public class SysOrgController extends BaseController {
 
     @RequestMapping()
     @PreAuthorize("hasAuthority('org_list')")
-    public String list(@RequestBody JpaQueryModel<SysOrg> query) {
+    public String list(@RequestBody QueryModel<SysOrg> query) {
         QueryPage<SysOrg> pageable = orgService.queryForPage(query);
         return JsonUtils.toJSONStringExcludes(JsonResult.success(pageable));
     }

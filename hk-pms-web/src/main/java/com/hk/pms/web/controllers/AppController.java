@@ -3,8 +3,8 @@ package com.hk.pms.web.controllers;
 import com.hk.commons.util.ByteConstants;
 import com.hk.commons.util.JsonUtils;
 import com.hk.core.data.commons.query.Order;
+import com.hk.core.data.commons.query.QueryModel;
 import com.hk.core.data.commons.query.QueryPage;
-import com.hk.core.data.jpa.query.JpaQueryModel;
 import com.hk.core.web.JsonResult;
 import com.hk.core.web.controller.BaseController;
 import com.hk.pms.core.domain.SysApp;
@@ -35,7 +35,7 @@ public class AppController extends BaseController {
      */
     @RequestMapping
     @PreAuthorize("hasAuthority('permission_list')")
-    public String list(JpaQueryModel<SysApp> query) {
+    public String list(QueryModel<SysApp> query) {
         QueryPage<SysApp> pageable = appService.queryForPage(query);
         return JsonUtils.toJSONStringExcludes(JsonResult.success(pageable));
     }
