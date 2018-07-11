@@ -19,7 +19,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * @author: huangkai
+ * @author: kevin
  * @date 2018-04-12 16:59
  */
 @Service
@@ -63,14 +63,14 @@ public class SysRoleServiceImpl extends BaseServiceImpl<SysRole, String> impleme
     public void disable(String id) {
         SysRole role = findOne(id);
         role.setRoleStatus(ByteConstants.ZERO);
-        saveOrUpdate(role);
+        insertOrUpdate(role);
     }
 
     @Override
     public void enable(String id) {
         SysRole role = findOne(id);
         role.setRoleStatus(ByteConstants.ONE);
-        saveOrUpdate(role);
+        insertOrUpdate(role);
     }
 
     @Override

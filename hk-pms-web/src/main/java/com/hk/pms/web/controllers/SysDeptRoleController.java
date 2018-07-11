@@ -11,7 +11,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @author: huangkai
+ * @author: kevin
  * @date 2018-05-23 11:26
  */
 @RestController
@@ -44,11 +44,11 @@ public class SysDeptRoleController extends BaseController {
 
     @PostMapping("save")
     @PreAuthorize("hasAnyAuthority('org_create','org_edit')")
-    public String saveOrUpdate(SysDeptRole deptRole, Errors errors) {
+    public String insertOrUpdate(SysDeptRole deptRole, Errors errors) {
         if (errors.hasErrors()) {
             return JsonUtils.toJSONString(JsonResult.badRueqest(errors.getFieldError().getDefaultMessage()));
         }
-        deptRoleService.saveOrUpdate(deptRole);
+        deptRoleService.insertOrUpdate(deptRole);
         return JsonUtils.toJSONString(JsonResult.success());
     }
 }

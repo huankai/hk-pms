@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * @author: huangkai
+ * @author: kevin
  * @date 2018-04-17 16:29
  */
 @RestController
@@ -77,7 +77,7 @@ public class AppController extends BaseController {
         if (errors.hasErrors()) {
             return JsonUtils.toJSONString(JsonResult.badRueqest(errors.getFieldError().getDefaultMessage()));
         }
-        appService.saveOrUpdate(app);
+        appService.insertOrUpdate(app);
         return JsonUtils.toJSONString(JsonResult.success());
     }
 

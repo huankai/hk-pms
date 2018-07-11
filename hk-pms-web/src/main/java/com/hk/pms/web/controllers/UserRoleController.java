@@ -10,7 +10,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @author: huangkai
+ * @author: kevin
  * @date 2018-05-23 11:06
  */
 @RestControllerAdvice
@@ -52,7 +52,7 @@ public class UserRoleController extends BaseController {
         if (errors.hasErrors()) {
             return JsonUtils.toJSONString(JsonResult.badRueqest(errors.getFieldError().getDefaultMessage()));
         }
-        userRoleService.saveOrUpdate(userRole);
+        userRoleService.insertOrUpdate(userRole);
         return JsonUtils.toJSONString(JsonResult.success());
     }
 }

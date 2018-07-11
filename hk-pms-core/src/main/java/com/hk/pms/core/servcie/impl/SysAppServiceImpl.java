@@ -12,7 +12,7 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.stereotype.Service;
 
 /**
- * @author: huangkai
+ * @author: kevin
  * @date 2018-04-12 11:32
  */
 @Service
@@ -52,6 +52,6 @@ public class SysAppServiceImpl extends EnableCacheServiceImpl<SysApp, String> im
     private void updateStatus(String appId, Byte status) {
         SysApp app = findOne(appId);
         app.setAppStatus(status);
-        getCurrentProxy().saveOrUpdate(app);
+        getCurrentProxy().insertOrUpdate(app);
     }
 }

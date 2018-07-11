@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  * 角色与权限配置
  *
- * @author huangkai
+ * @author: kevin
  * @date 2018-5-13 11:29
  */
 @RestController
@@ -59,7 +59,7 @@ public class RolePermissionController extends BaseController {
         if (errors.hasErrors()) {
             return JsonUtils.toJSONString(JsonResult.badRueqest(errors.getFieldError().getDefaultMessage()));
         }
-        rolePermissionService.saveOrUpdate(rolePermission);
+        rolePermissionService.insertOrUpdate(rolePermission);
         return JsonUtils.toJSONString(JsonResult.success());
     }
 }

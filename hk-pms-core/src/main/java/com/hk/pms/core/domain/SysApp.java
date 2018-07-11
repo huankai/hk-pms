@@ -9,7 +9,7 @@ import javax.persistence.Table;
 /**
  * App Entity
  *
- * @author: huangkai
+ * @author: kevin
  * @date 2018-04-12 11:24
  */
 @Entity

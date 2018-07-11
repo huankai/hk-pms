@@ -4,7 +4,7 @@ import com.hk.core.data.jpa.repository.StringRepository;
 import com.hk.pms.core.domain.SysPermission;
 
 /**
- * @author: huangkai
+ * @author: kevin
  * @date 2018-04-12 16:39
  */
 public interface SysPermissionRepository extends StringRepository<SysPermission> {

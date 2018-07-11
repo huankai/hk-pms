@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * @author: huangkai
+ * @author: kevin
  * @date 2018-04-12 11:48
  */
 @Table(name = "sys_org_dept")

@@ -4,7 +4,7 @@ import com.hk.core.data.jpa.repository.StringRepository;
 import com.hk.pms.core.domain.SysOrgDept;
 
 /**
- * @author: huangkai
+ * @author: kevin
  * @date 2018-04-12 16:39
  */
 public interface SysOrgDeptRepository extends StringRepository<SysOrgDept> {

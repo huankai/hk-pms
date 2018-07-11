@@ -10,7 +10,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author kally
+ * @author: kevin
  * @date 2018年1月24日上午11:39:55
  */
 @SpringBootApplication

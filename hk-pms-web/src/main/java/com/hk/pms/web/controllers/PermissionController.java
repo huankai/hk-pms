@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * @author: huangkai
+ * @author: kevin
  * @date 2018-05-08 15:33
  */
 @RestController
@@ -49,11 +49,11 @@ public class PermissionController extends BaseController {
 
     @PostMapping("save")
     @PreAuthorize("hasAnyAuthority('permission_create','permission_edit')")
-    public String saveOrUpdate(SysPermission permission, Errors errors) {
+    public String insertOrUpdate(SysPermission permission, Errors errors) {
         if (errors.hasErrors()) {
             return JsonUtils.toJSONString(JsonResult.error(errors.getFieldError().getDefaultMessage()));
         }
-        permissionService.saveOrUpdate(permission);
+        permissionService.insertOrUpdate(permission);
         return JsonUtils.toJSONString(JsonResult.success());
     }
 

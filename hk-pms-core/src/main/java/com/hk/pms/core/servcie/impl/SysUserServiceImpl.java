@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author: huangkai
+ * @author: kevin
  * @date 2018-04-12 17:01
  */
 @Service
@@ -47,7 +47,7 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser, String> impleme
     private void updateStatus(String userId, Byte userStatus) {
         SysUser sysUser = findOne(userId);
         sysUser.setUserStatus(userStatus);
-        saveOrUpdate(sysUser);
+        insertOrUpdate(sysUser);
     }
 
     @Override

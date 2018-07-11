@@ -13,7 +13,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @author: huangkai
+ * @author: kevin
  * @date 2018-05-23 11:26
  */
 @RestController
@@ -49,7 +49,7 @@ public class SysOrgDeptController extends BaseController {
         if (errors.hasErrors()) {
             return JsonUtils.toJSONString(JsonResult.badRueqest(errors.getFieldError().getDefaultMessage()));
         }
-        orgDeptService.saveOrUpdate(orgDept);
+        orgDeptService.insertOrUpdate(orgDept);
         return JsonUtils.toJSONString(JsonResult.success());
     }
 }

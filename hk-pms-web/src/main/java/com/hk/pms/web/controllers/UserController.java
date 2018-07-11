@@ -13,7 +13,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @author huangkai
+ * @author: kevin
  * @date 2018-5-13 11:37
  */
 @RestController
@@ -25,7 +25,7 @@ public class UserController extends BaseController {
 
     @RequestMapping()
     @PreAuthorize("hasAuthority('user_list')")
-    public String list(@RequestBody QueryModel query) {
+    public String list(@RequestBody QueryModel<SysUser> query) {
         QueryPage<SysUser> pageable = userService.queryForPage(query);
         return JsonUtils.toJSONStringExcludes(JsonResult.success(pageable));
     }
@@ -49,7 +49,7 @@ public class UserController extends BaseController {
         if (errors.hasErrors()) {
             return JsonUtils.toJSONString(JsonResult.badRueqest(errors.getFieldError().getDefaultMessage()));
         }
-        userService.saveOrUpdate(user);
+        userService.insertOrUpdate(user);
         return JsonUtils.toJSONString(JsonResult.success());
     }
 

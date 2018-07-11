@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * @author: huangkai
+ * @author: kevin
  * @date 2018-04-12 16:53
  */
 public interface SysPermissionService extends BaseService<SysPermission, String> {

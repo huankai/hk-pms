@@ -4,7 +4,7 @@ import com.hk.core.data.jpa.repository.StringRepository;
 import com.hk.pms.core.domain.SysUserRole;
 
 /**
- * @author: huangkai
+ * @author: kevin
  * @date 2018-04-12 16:42
  */
 public interface SysUserRoleRepository extends StringRepository<SysUserRole> {

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * @author: huangkai
+ * @author: kevin
  * @date 2018-05-08 15:33
  */
 @RestController
@@ -49,11 +49,11 @@ public class RoleController extends BaseController {
 
     @PostMapping("save")
     @PreAuthorize("hasAnyAuthority('role_create','role_edit')")
-    public String saveOrUpdate(SysRole role, Errors errors) {
+    public String insertOrUpdate(SysRole role, Errors errors) {
         if (errors.hasErrors()) {
             return JsonUtils.toJSONString(JsonResult.error(errors.getFieldError().getDefaultMessage()));
         }
-        roleService.saveOrUpdate(role);
+        roleService.insertOrUpdate(role);
         return JsonUtils.toJSONString(JsonResult.success());
     }
 
